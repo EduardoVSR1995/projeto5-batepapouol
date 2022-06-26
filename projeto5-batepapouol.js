@@ -30,12 +30,12 @@ function getMesenger(){
 function getMeseng(resposta){
     document.querySelector("li").innerHTML = "";
     for (let index = 0; index < resposta.data.length; index++) {
-        if(resposta.data[index].to === "Todos" && resposta.data[index].type === "status" ){
+        if(resposta.data[index].to !== "private_message" && resposta.data[index].type === "status" ){
          const i = document.querySelector("li").innerHTML +=`<h1 class="xx"><span>(${resposta.data[index].time})</span> &nbsp; <b>${resposta.data[index].from}</b>:&nbsp; ${resposta.data[index].text} </h1> `;
         
         }
 
-        if (resposta.data[index].to === "Todos" &&  resposta.data[index].type === "message") {
+        if (resposta.data[index].to === "private_message" &&  resposta.data[index].type === "message") {
             document.querySelector("li").innerHTML +=`<h2 class="xx"><span>(${resposta.data[index].time})</span> &nbsp;<b>${resposta.data[index].from}</b> &nbsp;para&nbsp; <b>${resposta.data[index].to}</b>:&nbsp; ${resposta.data[index].text} </h2> `;
         } 
     
