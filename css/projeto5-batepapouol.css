@@ -8,11 +8,16 @@
 
 }
 body{
+    height: 100%;
     display: flex;
-    background-color: #E5E5E5;        
+            
 }
 
-.topo, .total, h2, .caixaDeEscrever, .usuariosAtivos{
+.background1{
+    background-color: #E5E5E5;
+}
+
+.background, .topo, .total, h2, .caixaDeEscrever, .usuariosAtivos{
     background-color:#FFFFFF;
 }
 
@@ -40,8 +45,8 @@ h1{
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    height:667px;
-    width: 375px;
+    height: 100%;
+    width: 100%;
 }
 
 .total>p{
@@ -97,10 +102,10 @@ h1{
 }
 
 .total2>li{
-    height: 500px;
+    height: 100%;
     width: 100%;
-    margin-top: 85px;
-    margin-bottom: 70px;    
+    padding-top: 85px;
+    padding-bottom: 70px; 
     overflow : scroll;
 }
 
@@ -214,8 +219,6 @@ p>textarea{
     width: 80%;
     height: 100%; 
 }
-
-
 
 .caixaDeEscrever>textarea::placeholder{
     color: #000000;

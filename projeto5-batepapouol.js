@@ -78,7 +78,7 @@ function options(){
     const optionsScreen = `<div class="total3"><div class="sairUsuarioAtivo" onclick="exitUsuarioAtivo()"></div><div class="usuariosAtivos"> <p> Escolha um contato<br> para enviar mensagem:</p> <span><img src="img/Vector.png">&nbsp Todos </span><ul> </ul><p>Escolha a visibilidade:</p> <span> <img src="img/Vector3.png"> &nbsp Público</span> <span><img src="img/Vector 4.png">&nbsp Reservadamente </span></div></div>`;
     putOnUser();
     document.querySelector("body").innerHTML+= optionsScreen;
-    //value = setInterval(putOnUser, 3000);
+    value = setInterval(putOnUser, 3000);
 }
 
 function exitUsuarioAtivo(){
@@ -90,13 +90,15 @@ function exitUsuarioAtivo(){
 function secondScreen(){
     const secondScreen =`<div class="total2"><div class="topo"> <img src="img/logo 1.png" alt="">  <img src="img/Vector.png" onclick="options()"></div><li></li><div class="caixaDeEscrever"><textarea placeholder="Escreva aqui..."></textarea> <img src="img/Vector(1).png" onclick="submits()"></img></div></div>` ;
     document.querySelector("body").innerHTML=secondScreen;
+    document.querySelector("body").classList.add("background1");
     getMesenger();
-    //setInterval(getMesenger, 3000);
+    setInterval(getMesenger, 3000);
 
 }
 
 function deletInitialPage(){
     document.querySelector(".total").remove();
+    document.querySelector("body").classList.remove("background");
     secondScreen();
 }
 
@@ -126,5 +128,6 @@ function putName(){
 
  function initialscreen(){
      const initial =`<div class="total"> <img src="img/logo 2.png"> <p> <textarea type="text" placeholder="Digite seu nome"></textarea>  <ul onclick="putName()"> Entrar </ul> </p> </div>` ;
+     document.querySelector("body").classList.add("background");
      document.querySelector("body").innerHTML=initial;
  }
