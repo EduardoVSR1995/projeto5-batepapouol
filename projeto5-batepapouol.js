@@ -35,7 +35,7 @@ function getMeseng(resposta){
         
         }
 
-        if (resposta.data[index].to === "private_message" &&  resposta.data[index].type === "message") {
+        if (resposta.data[index].to !== "private_message" &&  resposta.data[index].type === "message") {
             document.querySelector("li").innerHTML +=`<h2 class="xx"><span>(${resposta.data[index].time})</span> &nbsp;<b>${resposta.data[index].from}</b> &nbsp;para&nbsp; <b>${resposta.data[index].to}</b>:&nbsp; ${resposta.data[index].text} </h2> `;
         } 
     
