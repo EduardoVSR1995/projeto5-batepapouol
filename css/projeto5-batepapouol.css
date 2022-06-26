@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+ 
+.usuariosAtivos{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+body{
+    display: flex;
+    background-color: #E5E5E5;        
+}
+
+.topo, .total, h2, .caixaDeEscrever, .usuariosAtivos{
+    background-color:#FFFFFF;
+}
+
+span{
+    color: #AAAAAA;
+ }
+
+h1{
+    background-color:#DCDCDC;
+ }
+
+.topo, .caixaDeEscrever{  
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.211);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height:80px;
+    width: 100%;
+    position: fixed;
+}
+
+.total{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height:667px;
+    width: 375px;
+}
+
+.total>p{
+    display: flex;
+    justify-content: center;
+    margin-top: 94px;
+    margin-bottom: 15px;
+    width:100%;
+    height:54px;
+}
+
+.total>ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 9px;
+    width:109px;
+    height:45px;
+    color:#696969;
+    font-weight: 400;
+    font-size: 18px;
+    background-color: #E7E7E7;
+}
+
+.total>img{
+    margin-top: 72px;
+    width: 130px;
+    height: 92px;
+}
+
+
+.caixaDeEscrever>img {
+    margin: 0px 20px;
+}
+
+
+.topo>img{
+    margin: 0px 20px;
+}
+
+.topo{
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.211);
+    top:0px;
+}
+
+.caixaDeEscrever{
+    bottom: 0px;
+}
+
+.none{
+    display: none;
+}
+
+.total2>li{
+    height: 500px;
+    width: 100%;
+    margin-top: 85px;
+    margin-bottom: 70px;    
+    overflow : scroll;
+}
+
+b, .usuariosAtivos> p, ul>p{
+    font-weight: bold;
+}
+.usuariosAtivos> p{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 259px;
+    height: 84px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.usuariosAtivos>ul{
+    margin: 10px 0px;
+}
+ul>img{
+    width: 20px;
+}
+
+li>h1, li>h2{
+    word-break:break-word ;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    min-height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-items: center; 
+    margin: 4px 0px;
+    width:100%;    
+}
+.total2{
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+}
+
+.total3{
+    
+    display: flex;
+    width:100%;
+    height: 100%;
+    position:absolute;
+}
+
+.usuariosAtivos{
+    margin-left: 20%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    width:80%;
+    height: 100%;
+    position: absolute;  
+}
+
+.sairUsuarioAtivo{
+    width:20%;
+    height: 100%;
+    background-color:#000000;
+    opacity: 60%;
+    position: absolute;
+}
+
+.usuariosAtivos >ul{
+    background-color: #FFFFFF;
+    max-height: 200px;
+    overflow: scroll;
+}
+
+.usuariosAtivos>span>img{
+    width: 20px;
+}
+
+
+.usuariosAtivos>span{
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin: 5px;
+}
+ion-icon{
+    size: 30px;
+    color: green;
+}
+
+textarea{
+    color: #000000;
+    outline: none;
+    resize:both;
+    overflow: auto;
+    margin-left: 20px;
+    border: 0px solid;
+}
+
+p>textarea{
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #D7D7D7;
+    border-radius: 5px;
+    outline: #D7D7D7 ;
+    font-size: 18px;
+    color: #AEAEAE;  
+    width: 80%;
+    height: 100%; 
+}
+
+
+
+.caixaDeEscrever>textarea::placeholder{
+    color: #000000;
+    opacity: 1;
+    font-style: italic;
+}
+
+.name{
+    display: flex;
+    align-items: center;
+    width: 225px;
+}
+ul>.allUsers{
+    width: 250px;
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;        
+}
