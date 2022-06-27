@@ -14,8 +14,7 @@ initialscreen();
 
 function submits() {    
     let toUser= "";
-    
-    if(userOnline.length>0){
+    if(userOnline.length>0 && visible.length>0){
         document.querySelector("p").innerHTML=``;
         toUser = userOnline[0].textContent;
         tru = visible[0].innerHTML === `<h4> <img src="img/Vector3.png"> &nbsp; Público</h4><p><ion-icon class="y md hydrated" name="checkmark-outline" role="img" aria-label="checkmark outline"></ion-icon></p>`;
@@ -157,6 +156,10 @@ function options(){
 function exitUsuarioAtivo(){
     clearInterval(valur);
     document.querySelector(".total3").remove();
+    document.querySelector('textarea').addEventListener('keydown',enter2);
+    if(visible.length ===0){
+        return;
+    }
     if (userOnline.length === 1 &&  visible[0].innerHTML === `<h4> <img src="img/Vector3.png"> &nbsp; Público</h4><p><ion-icon class="y md hydrated" name="checkmark-outline" role="img" aria-label="checkmark outline"></ion-icon></p>`) {
         document.querySelector("p").innerHTML=`Enviando para${userOnline[0].textContent} (Publicamente)`;
     }
@@ -182,7 +185,9 @@ function enter2(element){
         element.keyCode=0; 
         element.returnValue=false;
         submits()
+        getMesenger();
     }
+    
 }
 
 function deletInitialPage(){
