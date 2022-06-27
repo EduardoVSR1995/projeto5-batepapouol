@@ -59,8 +59,17 @@ h1 {
     width: 100%;
 }
 
+h5{
+    width: 100%;
+    height: 54px;
+
+}
+
 .total>p {
+    text-align: center;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
     margin-top: 94px;
     margin-bottom: 15px;
@@ -280,7 +289,7 @@ body>p{
  margin-left: 20px;
   
 }
- p>img{
-    width: 60px;
-    height: 60px;
- }
+.opaci{
+    opacity: 0;
+
+}

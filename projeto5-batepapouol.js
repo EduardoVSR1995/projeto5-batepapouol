@@ -217,8 +217,8 @@ function putName(){
     };
     nameUser.push(namePush);
     const promes= axios.post("https://mock-api.driven.com.br/api/v6/uol/participants",namePush)  
-    document.querySelector('ul').innerHTML =``;
-    document.querySelector('p').innerHTML =`<img src="img/1487.gif"></img>`;
+    document.querySelector('ul').classList.add("opaci");
+    document.querySelector('p').innerHTML =`<img src="img/1487.gif"></img><h5>Entrando</h5>`;
     promes.then(checkName);
     promes.catch(noName);
 }
