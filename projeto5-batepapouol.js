@@ -181,7 +181,7 @@ function secondScreen(){
 }
 
 function enter2(element){
-    if(element.code === "Enter"){
+    if(element.code === "Enter" || element.code==="NumpadEnter"){
         element.keyCode=0; 
         element.returnValue=false;
         submits()
@@ -228,7 +228,7 @@ function putName(){
  }
 
  function enter(element){
-    if(element.code === "Enter"){
+    if(element.code === "Enter" || element.code==="NumpadEnter"){
         element.keyCode=0; 
         element.returnValue=false;
         putName()
