@@ -12,7 +12,7 @@ let tru2="";
 
 initialscreen();
 
-function submits() {
+function submits() {    
     let toUser= "";
     
     if(userOnline.length>0){
