@@ -229,6 +229,7 @@ function putName(){
 
  function enter(element){
     if(element.code === "Enter" || element.code==="NumpadEnter"){
+        console.log(element.code);
         element.keyCode=0; 
         element.returnValue=false;
         putName()
