@@ -77,12 +77,7 @@ function visibility(element){
        return;
        }
        visible.push(element);
-       element.querySelector("p").innerHTML=`<ion-icon class="y" name="checkmark-outline"></ion-icon>`;   
-       if (userOnline.length == 0) {
-        return;
-       }
-       console.log(userOnline[0].querySelector(".name").textContent);
-       console.log(visible[0].textContent);
+        element.querySelector("p").innerHTML=`<ion-icon class="y" name="checkmark-outline"></ion-icon>`; 
       // directedMessage();
 }
 
@@ -114,8 +109,8 @@ function options(){
     const optionsScreen = `<div class="total3"><div class="sairUsuarioAtivo" onclick="exitUsuarioAtivo()"></div><div class="usuariosAtivos"> <p> Escolha um contato<br> para enviar mensagem:</p> <span><img src="img/Vector.png">&nbsp Todos </span><ul> </ul><p>Escolha a visibilidade:</p> <span onclick="visibility(this)"><h4> <img src="img/Vector3.png"> &nbsp Público</h4><p></p></span> <span onclick="visibility(this)" ><h4><img src="img/Vector 4.png">&nbsp Reservadamente</h4><p></p></span></div></div>`;
     putOnUser();
     document.querySelector("body").innerHTML+= optionsScreen;
-    value = setInterval(putOnUser, 3000);
-    value2 = setInterval(conferetag, 1);
+   value = setInterval(putOnUser, 3000);
+   value2 = setInterval(conferetag, 1);
 }
 
 function exitUsuarioAtivo(){
@@ -146,7 +141,7 @@ function remain(){
 
 function checkName(getName){
     deletInitialPage();
-    setInterval(remain, 5000);
+    //setInterval(remain, 5000);
 }
 
 function noName(getName){
