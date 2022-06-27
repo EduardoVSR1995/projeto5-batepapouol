@@ -222,7 +222,7 @@ ion-icon {
 .caixaDeEscrever>textarea {
     color: #000000;
     outline: none;
-    resize: both;
+    resize: none;
     overflow: auto;
     margin-left: 20px;
     border: 0px solid;
@@ -231,6 +231,7 @@ ion-icon {
 }
 
 p>textarea {
+    resize: none;
     padding: 15px;
     text-align: center;
     border: 1px solid #D7D7D7;
@@ -246,6 +247,7 @@ p>textarea {
     color: #000000;
     opacity: 1;
     font-style: italic;
+    resize: none;
 }
 
 .name {
