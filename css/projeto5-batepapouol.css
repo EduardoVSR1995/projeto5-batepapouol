@@ -205,6 +205,7 @@ li>h1,li>h2, li>h3 {
 .usuariosAtivos>span {
     display: flex;
     align-items: center;
+    justify-content: center;
     color: #000000;
     margin: 5px;
 }
@@ -252,4 +253,10 @@ ul>.allUsers {
     display: flex;
     align-items: center;
     margin: 10px 0px;
+}
+span>h4{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 20px;
 }

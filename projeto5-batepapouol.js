@@ -6,6 +6,7 @@ const visible=[];
 
 let value ;
 
+let value2 ;
 initialscreen();
 
 function submits() {
@@ -77,6 +78,9 @@ function visibility(element){
        }
        visible.push(element);
        element.querySelector("p").innerHTML=`<ion-icon class="y" name="checkmark-outline"></ion-icon>`;   
+       if (userOnline.length == 0) {
+        return;
+       }
        console.log(userOnline[0].querySelector(".name").textContent);
        console.log(visible[0].textContent);
       // directedMessage();
@@ -94,15 +98,35 @@ function putOnUser(){
     promes.then(putUser);
 }
 
+function conferetag(){
+    if(userOnline.length !== 0){
+        let users = document.querySelector("ul").children;
+        for (let index = 0; index < users.length; index++) {
+            if(userOnline[0].querySelector(".name").textContent === users[index].querySelector(".name").textContent && users[index].querySelector("y") === null ){
+                users[index].querySelector(".tag").innerHTML=`<ion-icon class="y" name="checkmark-outline"></ion-icon>`;
+            
+            }
+            
+        }
+        
+        
+        console.log(document.querySelector("ul").children.length);    
+    //console.log(users.querySelector(".name").textContent);
+    console.log(userOnline[0].querySelector(".name").textContent);
+    }
+}
+
 function options(){
-    const optionsScreen = `<div class="total3"><div class="sairUsuarioAtivo" onclick="exitUsuarioAtivo()"></div><div class="usuariosAtivos"> <p> Escolha um contato<br> para enviar mensagem:</p> <span><img src="img/Vector.png">&nbsp Todos </span><ul> </ul><p>Escolha a visibilidade:</p> <span onclick="visibility(this)"> <img src="img/Vector3.png"> &nbsp Público<p></p></span> <span onclick="visibility(this)" ><img src="img/Vector 4.png">&nbsp Reservadamente<p></p></span></div></div>`;
+    const optionsScreen = `<div class="total3"><div class="sairUsuarioAtivo" onclick="exitUsuarioAtivo()"></div><div class="usuariosAtivos"> <p> Escolha um contato<br> para enviar mensagem:</p> <span><img src="img/Vector.png">&nbsp Todos </span><ul> </ul><p>Escolha a visibilidade:</p> <span onclick="visibility(this)"><h4> <img src="img/Vector3.png"> &nbsp Público</h4><p></p></span> <span onclick="visibility(this)" ><h4><img src="img/Vector 4.png">&nbsp Reservadamente</h4><p></p></span></div></div>`;
     putOnUser();
     document.querySelector("body").innerHTML+= optionsScreen;
     value = setInterval(putOnUser, 3000);
+    value2 = setInterval(conferetag, 1);
 }
 
 function exitUsuarioAtivo(){
     clearInterval(value);
+    clearInterval(value2);
     document.querySelector(".total3").remove();
 
 }
