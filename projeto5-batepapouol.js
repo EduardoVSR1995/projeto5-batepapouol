@@ -104,15 +104,9 @@ function conferetag(){
         for (let index = 0; index < users.length; index++) {
             if(userOnline[0].querySelector(".name").textContent === users[index].querySelector(".name").textContent && users[index].querySelector("y") === null ){
                 users[index].querySelector(".tag").innerHTML=`<ion-icon class="y" name="checkmark-outline"></ion-icon>`;
-            
             }
             
         }
-        
-        
-        console.log(document.querySelector("ul").children.length);    
-    //console.log(users.querySelector(".name").textContent);
-    console.log(userOnline[0].querySelector(".name").textContent);
     }
 }
 
