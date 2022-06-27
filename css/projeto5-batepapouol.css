@@ -280,3 +280,7 @@ body>p{
  margin-left: 20px;
   
 }
+ p>img{
+    width: 60px;
+    height: 60px;
+ }

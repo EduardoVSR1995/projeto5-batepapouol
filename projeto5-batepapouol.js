@@ -10,6 +10,7 @@ let tru="";
 
 let tru2="";
 
+
 initialscreen();
 
 function submits() {    
@@ -216,6 +217,8 @@ function putName(){
     };
     nameUser.push(namePush);
     const promes= axios.post("https://mock-api.driven.com.br/api/v6/uol/participants",namePush)  
+    document.querySelector('ul').innerHTML =``;
+    document.querySelector('p').innerHTML =`<img src="img/1487.gif"></img>`;
     promes.then(checkName);
     promes.catch(noName);
 }
