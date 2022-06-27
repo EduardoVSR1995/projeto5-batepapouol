@@ -2,9 +2,9 @@ const nameUser = [];
 
 const userOnline= [];
 
-let value ;
+const visible=[];
 
-const click = [];
+let value ;
 
 initialscreen();
 
@@ -17,9 +17,8 @@ function submits() {
         type: "message" 
     };
     axios.post("https://mock-api.driven.com.br/api/v6/uol/messages",mesenge);
-    
     document.querySelector("textarea").value = "";
- 
+    getMesenger();
 }
 
 function getMesenger(){
@@ -30,42 +29,63 @@ function getMesenger(){
 function getMeseng(resposta){
     document.querySelector("li").innerHTML = "";
     for (let index = 0; index < resposta.data.length; index++) {
-        if(resposta.data[index].to !== "private_message" && resposta.data[index].type === "status" ){
+        if(resposta.data[index].type === "status" ){
          const i = document.querySelector("li").innerHTML +=`<h1 class="xx"><span>(${resposta.data[index].time})</span> &nbsp; <b>${resposta.data[index].from}</b>:&nbsp; ${resposta.data[index].text} </h1> `;
-        
         }
 
-        if (resposta.data[index].to !== "private_message" &&  resposta.data[index].type === "message") {
+        if ( resposta.data[index].type === "message") {
             document.querySelector("li").innerHTML +=`<h2 class="xx"><span>(${resposta.data[index].time})</span> &nbsp;<b>${resposta.data[index].from}</b> &nbsp;para&nbsp; <b>${resposta.data[index].to}</b>:&nbsp; ${resposta.data[index].text} </h2> `;
+        }
+        
+        if (resposta.data[index].to === nameUser[0].name &&  resposta.data[index].type === "private_message") {
+            document.querySelector("li").innerHTML +=`<h3 class="xx"><span>(${resposta.data[index].time})</span> &nbsp;<b>${resposta.data[index].from}</b> &nbsp;(09:22:48) reservadamente para &nbsp; <b>${resposta.data[index].to}</b>:&nbsp; ${resposta.data[index].text} </h3> `;
         } 
     
     const ultimaMensagem = document.querySelector(".xx:last-child");
-    console.log(ultimaMensagem);
-    ultimaMensagem.scrollIntoView();
+    if(ultimaMensagem !== null){
+        ultimaMensagem.scrollIntoView();
     }
+    }
+    
 }
 
-function showTag(element){
-    const i = document.querySelector("ion-icon");
-    if (element === click[0]) {
-        i.remove("ion-icon");
-        click.splice(0, click.length);
+function catchName(element){
+    userOnline.push(element);
+    const i = document.querySelector(".x"); 
+    if (userOnline.length > 1) {
+        userOnline.splice(0, userOnline.length);
         return;
     }
-    if( i!==null ){
-         i.remove("ion-icon");
-         click.splice(0, click.length);
-    }
-    element.querySelector(".tag").innerHTML=`<ion-icon name="checkmark-outline"></ion-icon>` ;
-    click.push(element);
+     if( i!==null ){
+          i.remove("x");
+          userOnline.splice(0, userOnline.length);
+        return;
+        }
+        userOnline[0].querySelector(".tag").innerHTML=`<ion-icon class="x" name="checkmark-outline"></ion-icon>`;
 }
 
+// function directedMessage(){
 
+// }
+
+function visibility(element){
+    const i = document.querySelector(".y"); 
+    if( i!==null ){
+         i.remove("y");
+         visible.splice(0,visible.length);
+       return;
+       }
+       visible.push(element);
+       element.querySelector("p").innerHTML=`<ion-icon class="y" name="checkmark-outline"></ion-icon>`;   
+       console.log(userOnline[0].querySelector(".name").textContent);
+       console.log(visible[0].textContent);
+      // directedMessage();
+}
 
 function putUser(resposta1){
     document.querySelector("ul").innerHTML =``;
     for (let index = 0; index < resposta1.data.length; index++) {
-    document.querySelector("ul").innerHTML +=`<div class="allUsers" onclick="showTag(this)"><div class="name"><img src="img/Vector 5.png">&nbsp ${resposta1.data[index].name}</div><div class="tag"></div></div>`;
+    document.querySelector("ul").innerHTML +=`<div class="allUsers" onclick="catchName(this)"><div class="name"><img src="img/Vector 5.png">&nbsp ${resposta1.data[index].name}</div><div class="tag"></div></div>`;
     }
 }
 
@@ -75,7 +95,7 @@ function putOnUser(){
 }
 
 function options(){
-    const optionsScreen = `<div class="total3"><div class="sairUsuarioAtivo" onclick="exitUsuarioAtivo()"></div><div class="usuariosAtivos"> <p> Escolha um contato<br> para enviar mensagem:</p> <span><img src="img/Vector.png">&nbsp Todos </span><ul> </ul><p>Escolha a visibilidade:</p> <span> <img src="img/Vector3.png"> &nbsp Público</span> <span><img src="img/Vector 4.png">&nbsp Reservadamente </span></div></div>`;
+    const optionsScreen = `<div class="total3"><div class="sairUsuarioAtivo" onclick="exitUsuarioAtivo()"></div><div class="usuariosAtivos"> <p> Escolha um contato<br> para enviar mensagem:</p> <span><img src="img/Vector.png">&nbsp Todos </span><ul> </ul><p>Escolha a visibilidade:</p> <span onclick="visibility(this)"> <img src="img/Vector3.png"> &nbsp Público<p></p></span> <span onclick="visibility(this)" ><img src="img/Vector 4.png">&nbsp Reservadamente<p></p></span></div></div>`;
     putOnUser();
     document.querySelector("body").innerHTML+= optionsScreen;
     value = setInterval(putOnUser, 3000);
